@@ -1,7 +1,21 @@
 import argparse
 import os
 
+from termcolor import cprint
+
 from ._renamer import Renamer
+
+LOGO = r"""
+   ____    U _____ u _   _       _   _   __  __
+U |  _"\ u \| ___"|/| \ |"|   U |"|u| |U|' \/ '|u
+ \| |_) |/  |  _|" <|  \| |>   \| |\| |\| |\/| |/
+  |  _ <    | |___ U| |\  |u    | |_| | | |  | |
+  |_| \_\   |_____| |_| \_|    <<\___/  |_|  |_|
+  //   \\_  <<   >> ||   \\,-.(__) )(  <<,-,,-.
+ (__)  (__)(__) (__)(_")  (_/     (__)  (./  \.)
+"""
+
+cprint(LOGO, color="magenta")
 
 
 def main():
