@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "renum"
+version = "0.1.0"
+description = "Rename consecutively"
+authors = ["Shunta Komatsu <skmatz217@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+tqdm = "^4.39"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
+flake8 = "^3.7"
+mypy = "^0.740.0"
+pylint = "^2.4"
+pytest = "^5.3"
+
+[tool.poetry.scripts]
+renum = "renum.cli:main"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
