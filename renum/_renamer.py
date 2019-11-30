@@ -1,7 +1,6 @@
 from glob import glob
 from os.path import isdir, isfile, join, splitext
 from shutil import move
-from typing import List, Tuple, Union
 
 from tqdm import tqdm
 
