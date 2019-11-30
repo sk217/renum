@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "renum"
 version = "0.1.0"
-description = "Rename consecutively"
+description = "Rename serially"
 authors = ["Shunta Komatsu <skmatz217@gmail.com>"]
 license = "MIT"
 
