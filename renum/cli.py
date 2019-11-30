@@ -59,9 +59,26 @@ def main():
         default="_",
         help="Delimiter between prefix and serial numbers." "Defaults to '_'.",
     )
+    parser.add_argument(
+        "-od", "--dir-only", action="store_true", help="Rename dir only."
+    )
+    parser.add_argument(
+        "-of", "--file-only", action="store_true", help="Rename file only."
+    )
     args = parser.parse_args()
 
+    if args.dir_only and args.file_only:
+        parser.error(
+            "'--dir-only' and '--file-only' cannot be used at the same time."
+        )
     os.makedirs(args.output_root, exist_ok=True)
+
+    if args.dir_only:
+        restriction = "dir"
+    elif args.file_only:
+        restriction = "file"
+    else:
+        restriction = None
 
     renamer = Renamer(
         in_root=args.input_root,
@@ -70,5 +87,6 @@ def main():
         starts=args.starts,
         digits=args.digits,
         delimiter=args.delimiter,
+        restriction=restriction,
     )
     renamer.rename()
